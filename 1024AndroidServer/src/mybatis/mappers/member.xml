@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+<!--  로그인에 사용할 SQL : id는 내가 정하는것, resultType은 domain 파일명,  -->
+<select id="login" resultType="Member" 
+parameterType="Member">
+select id, nickname
+from androiduser
+where id=#{id} and pw=#{pw}
+</select>
+</mapper>

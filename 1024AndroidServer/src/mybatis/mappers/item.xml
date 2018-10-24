@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="item">
+<!-- item 테이블에서 itemid와 itemname을 전부 가져오는 SQL -->
+	<select id="listItem" resultType="Item">
+    	SELECT itemid, itemname FROM item
+  	</select>
+ <!-- item 테이블에서 itemid에 해당 데이터를 가져오는 SQL -->
+  	<select id="getItem" resultType="Item" parameterType="java.lang.Integer">
+    	SELECT itemid, itemname, price, description, pictureurl FROM item where itemid = #{itemid}
+  	</select>
+</mapper>
